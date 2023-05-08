@@ -8,8 +8,17 @@ body {
 
 .calculator{
     border: 1px red solid;
-    width: 40rem;
-    height: 25rem;
+    padding-top: 1rem;
+    margin-top: 5px;
+    width: 30rem;
+    height: 40rem;
+}
+
+.results {
+    margin-bottom: 1rem;
+    width: 85%;
+    height: 5rem;
+    font-size: 32px;
 }
 
 .edit-container{
@@ -18,15 +27,18 @@ body {
 }
 
 .edit {
-    
+    padding: 5px;
+    margin: 5px;
+    width: 43%;
+    height: 5rem;
 }
 
 .numpad {
     padding: 5px;
     margin: 1px;
+    margin-top: 5px;
     width: 100px;
     height: 100px;
-
     display: flexbox;
-    
+    font-size: 32px;
 }
