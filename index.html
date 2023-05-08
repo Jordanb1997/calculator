@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles.css">
     <script src="/index.js" defer></script>
-    <title>Document</title>
+    <title>Calculator</title>
 </head>
 <body>
     <div id="calculator" class="calculator">
         <input type="text" name="results" id="results" class="results" placeholder="0" readonly>
+        <div class="edit-container">
+            <input type="button" name="clear" id="clear" class="edit" value="clear">
+            <input type="button" name="delete" id="delete" class="edit" value="delete">
+        </div>
         <div name="keypad" class="keypad">
-            <div class="edit-container">
-                <input type="button" name="clear" id="clear" class="edit" value="clear">
-                <input type="button" name="delete" id="delete" class="edit" value="delete">
-            </div>
-            <input type="button" name="seven" id="seven" class="numpad" value="7">
+            <input type="button" name="seven" id="seven" class="numpad" value="7" onclick="">
             <input type="button" name="eight" id="eight" class="numpad" value="8">
             <input type="button" name="nine" id="nine" class="numpad" value="9">
             <input type="button" name="add" id="add" class="numpad" value="+">

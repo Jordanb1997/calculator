@@ -1,8 +1,14 @@
-let inputArray = [];
+const numpad = document.querySelectorAll('numpad');
+const enter = document.getElementById('enter');
+const clearButton = document.getElementById('clear');
+const deleteButton = document.getElementById('delete');
+const outputField = document.getElementById('results');
 
-let num1;
-let operator;
-let num2;
+
+
+let input = [];
+let number1 = '';
+let number2 = '';
 
 function addition(num1, num2) {
     return num1 + num2;
@@ -22,12 +28,13 @@ function division(num1, num2) {
 
 function operate(num1, operator, num2) {
     if (operator === '+') {
-        addition(num1, num2)
+        return addition(num1, num2);
     } else if (operator === '-') {
-        subtraction(num1, num2)
+        return subtraction(num1, num2);
     } else if (operator === '*') {
-        multiplication(num1, num2)
+        return multiplication(num1, num2);
     } else if (operator === '/') {
-        division(num1, num2)
+        return division(num1, num2);
     }
 }
+
