@@ -1,10 +1,11 @@
 const numpad = document.querySelectorAll('numpad');
+const numbers = document.querySelectorAll('number');
+const operators = document.querySelectorAll('operator');
+const decimal = document.getElementById('decimal');
 const enter = document.getElementById('enter');
 const clearButton = document.getElementById('clear');
 const deleteButton = document.getElementById('delete');
 const outputField = document.getElementById('results');
-
-
 
 let input = [];
 let number1 = '';
