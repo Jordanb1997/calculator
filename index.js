@@ -11,6 +11,10 @@ let input = [];
 let number1 = '';
 let number2 = '';
 
+numbers.forEach((input) =>
+    input.addEventListener('click', () => appendNumber(input.textContent))
+);
+
 function addition(num1, num2) {
     return num1 + num2;
 }
@@ -39,3 +43,6 @@ function operate(num1, operator, num2) {
     }
 }
 
+function appendNumber(number) {
+    outputField.textContent += number;
+}
