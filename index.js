@@ -1,8 +1,12 @@
-let input = [];
+let result;
+let resultString;
+let enterClicked = false;
+
 let number1 = '';
 let number2 = '';
-let resetScreen = false;
+let operator = '';
 
+//event listeners
 const numpad = document.querySelectorAll('numpad');
 const numberButtons = document.querySelectorAll('number');
 const operatorButtons = document.querySelectorAll('operator');
@@ -12,24 +16,7 @@ const clearButton = document.getElementById('clear');
 const deleteButton = document.getElementById('delete');
 const resultsField = document.getElementById('results');
 
-//enter.addEventListener('click', evaluate);
-//clearButton.addEventListener('click', clearCalculator);
-//deleteButton.addEventListener('click', deleteNumber);
-//decimal.addEventListener('click', addDecimal);
 
-numberButtons.forEach((button) =>
-    button.addEventListener('click', () => appendNumber(button.textContent))
-)
-
-operatorButtons.forEach((button) =>
-    button.addEventListener('click', () => setOperation(button.textContent))
-)
-
-function appendNumber(number) {
-    if (currentOperationScreen.textContent === '0' || shouldResetScreen)
-        resetScreen()
-    currentOperationScreen.textContent += number
-}
 
 function roundResult(num) {
     return Math.round(num * 1000) / 1000;
