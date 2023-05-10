@@ -7,15 +7,24 @@ body {
 }
 
 .calculator{
-    border: 1px red solid;
+    background-color: #a9a9a9;
+    border: 1px black solid;
+    border-radius: 5%;
+    box-shadow: 2px 1px;
     padding-top: 1rem;
     margin-top: 10rem;
     width: 30rem;
     height: 40rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .results {
+    background-color:  #c1baba;
+    border: 1px black solid;
     margin-bottom: 1rem;
+    padding: 5px;
     width: 85%;
     height: 5rem;
     text-align: right;
@@ -30,7 +39,7 @@ body {
 .edit {
     padding: 5px;
     margin: 5px;
-    width: 43%;
+    width: 42%;
     height: 5rem;
     text-align: center;
     font-size: 32px;
@@ -46,3 +55,4 @@ body {
     text-align: center;
     font-size: 32px;
 }
+
