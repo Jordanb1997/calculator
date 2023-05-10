@@ -1,5 +1,5 @@
 let result;
-let resultString;
+let resultString = "";
 let enterClicked = false;
 
 let number1 = '';
@@ -27,7 +27,6 @@ numberButtons.forEach((button) => {
             default:
                 break;
         }
-        //resultString = resultString + e.target.id
         resultString = resultString + getValue(e.target.id)
         showOnScreen(resultString)
     })
@@ -51,7 +50,7 @@ decimalButton.addEventListener("click", (e) => {
 
 enterButton.addEventListener("click", () => {
     number2 = Number(resultString)
-    operate(operator, number1, number2)
+    operate(number1, operator, number2)
     showOnScreen(result)
     resultString = result
     enterClicked = true
@@ -97,13 +96,13 @@ function division(num1, num2) {
 
 function operate(num1, operator, num2) {
     if (operator === '+') {
-        return addition(num1, num2);
+        result = addition(num1, num2);
     } else if (operator === '-') {
-        return subtraction(num1, num2);
+        result = subtraction(num1, num2);
     } else if (operator === '*') {
-        return multiplication(num1, num2);
+        result = multiplication(num1, num2);
     } else if (operator === '/') {
-        return division(num1, num2);
+        result = division(num1, num2);
     }
 }
 
@@ -143,5 +142,7 @@ function getValue(buttonId) {
             return '/'
         case (buttonId === "decimal"):
             return '.'
+        default:
+            break;
     }
 }
