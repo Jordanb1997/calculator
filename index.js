@@ -7,15 +7,71 @@ let number2 = '';
 let operator = '';
 
 //event listeners
-const numpad = document.querySelectorAll('numpad');
-const numberButtons = document.querySelectorAll('number');
-const operatorButtons = document.querySelectorAll('operator');
-const decimal = document.getElementById('decimal');
-const enter = document.getElementById('enter');
+const numpad = document.querySelectorAll('.numpad');
+const numberButtons = document.querySelectorAll('.number');
+const operatorButtons = document.querySelectorAll('.operator');
+const decimalButton = document.getElementById('decimal');
+const enterButton = document.getElementById('enter');
 const clearButton = document.getElementById('clear');
 const deleteButton = document.getElementById('delete');
 const resultsField = document.getElementById('results');
 
+numberButtons.forEach((button) => {
+    button.addEventListener("click", function (e) {
+        switch (true) {
+            case (enterClicked == true):
+                resultString = ""
+                enterClicked = false
+                break;
+
+            default:
+                break;
+        }
+        resultString = resultString + e.target.id
+        showOnScreen(resultString)
+    })
+})
+
+operatorButtons.forEach((button) => {
+    button.addEventListener("click", function (e) {
+        number1 = Number(resultString)
+        resultString = ""
+        operator = e.target.id
+        showOnScreen(operator)
+    })
+})
+
+decimalButton.addEventListener("click", (e) => {
+    if (resultString.includes(".") == false && resultString !== "") {
+        resultString = resultString + e.target.id
+        showOnScreen(resultString)
+    }
+})
+
+enterButton.addEventListener("click", () => {
+    number2 = Number(resultString)
+    operate(operator, number1, number2)
+    showOnScreen(result)
+    resultString = result
+    enterClicked = true
+})
+
+clearButton.addEventListener("click", () => {
+    resultString = ""
+    showOnScreen(resultString)
+})
+
+deleteButton.addEventListener("click", () => {
+    switch (true) {
+        case (resultString !== ""):
+            resultString = resultString.slice(0, (resultString.length - 1))
+            showOnScreen(resultString)
+            break;
+
+        default:
+            break;
+    }
+})
 
 
 function roundResult(num) {
@@ -48,4 +104,8 @@ function operate(num1, operator, num2) {
     } else if (operator === '/') {
         return division(num1, num2);
     }
+}
+
+function showOnScreen(string) {
+    resultsField.innerHTML = "<p>" + string + "</p>"
 }

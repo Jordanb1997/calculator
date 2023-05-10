@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles.css">
-    <script src="/index.js" defer></script>
+    
     <title>Calculator</title>
 </head>
 <body>
     <div id="calculator" class="calculator">
-        <div id="results" class="results">0</div>
+        <div id="results" class="results"></div>
 
         <div name="keypad" class="keypad">
             <button id="clear" class="edit" value="clear">Clear</button>
@@ -31,11 +31,13 @@
             <button id="three" class="numpad number" value="3">3</button>
             <button id="multiply" class="numpad operator" value="*">*</button>
 
-            <button id="decimal" class="numpad" value=".">.</button>
+            <button id="decimal" class="numpad decimal" value=".">.</button>
             <button id="zero" class="numpad number" value="0">0</button>
             <button id="enter" class="numpad" value="=">=</button>
             <button id="divide" class="numpad operator" value="/">/</button>
         </div>
     </div>
+    <script src="/index.js"></script>
 </body>
+
 </html>
