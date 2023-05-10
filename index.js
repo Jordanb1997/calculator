@@ -27,7 +27,8 @@ numberButtons.forEach((button) => {
             default:
                 break;
         }
-        resultString = resultString + e.target.id
+        //resultString = resultString + e.target.id
+        resultString = resultString + getValue(e.target.id)
         showOnScreen(resultString)
     })
 })
@@ -36,14 +37,14 @@ operatorButtons.forEach((button) => {
     button.addEventListener("click", function (e) {
         number1 = Number(resultString)
         resultString = ""
-        operator = e.target.id
+        operator = getValue(e.target.id)
         showOnScreen(operator)
     })
 })
 
 decimalButton.addEventListener("click", (e) => {
     if (resultString.includes(".") == false && resultString !== "") {
-        resultString = resultString + e.target.id
+        resultString = resultString + getValue(e.target.id)
         showOnScreen(resultString)
     }
 })
@@ -108,4 +109,39 @@ function operate(num1, operator, num2) {
 
 function showOnScreen(string) {
     resultsField.innerHTML = "<p>" + string + "</p>"
+}
+
+function getValue(buttonId) {
+    switch (true) {
+        case (buttonId === "one"):
+            return '1'
+        case (buttonId === "two"):
+            return '2'
+        case (buttonId === "three"):
+            return '3'
+        case (buttonId === "four"):
+            return '4'
+        case (buttonId === "five"):
+            return '5'
+        case (buttonId === "six"):
+            return '6'
+        case (buttonId === "seven"):
+            return '7'
+        case (buttonId === "eight"):
+            return '8'
+        case (buttonId === "nine"):
+            return '9'
+        case (buttonId === "zero"):
+            return '0'
+        case (buttonId === "add"):
+            return '+'
+        case (buttonId === "subtract"):
+            return '-'
+        case (buttonId === "multiply"):
+            return '*'
+        case (buttonId === "divide"):
+            return '/'
+        case (buttonId === "decimal"):
+            return '.'
+    }
 }
